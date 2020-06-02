@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './models/todo.dart';
+import './screens/todoScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,12 +29,30 @@ class _TodoState extends State<Todo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Todo'),
-      ),
-      body: Center(
-        child: Text('Morning'),
-      ),
-    );
+        appBar: AppBar(
+          title: Text('Todo'),
+        ),
+        body: ListView.builder(
+          itemBuilder: (ctx, index) {
+            return ListTile(
+              title: Text(todo[index].title),
+              trailing: Icon(Icons.verified_user),
+              onTap: () {
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (ctx) => TodoScreen(todo[index])));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (ctx) => TodoScreen(),
+                        settings: RouteSettings(
+                          arguments: todo[index],
+                        )));
+              },
+            );
+          },
+          itemCount: todo.length,
+        ));
   }
 }
