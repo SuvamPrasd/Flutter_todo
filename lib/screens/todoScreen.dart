@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../models/todo.dart';
-
 class TodoScreen extends StatelessWidget {
 //   final todo;
 
@@ -9,13 +7,13 @@ class TodoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TodoList todo = ModalRoute.of(context).settings.arguments;
+    final Map<String, String> todo = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: Text(todo.title),
+        title: Text(todo['title']),
       ),
       body: Center(
-        child: Text(todo.description),
+        child: Text(todo['title']),
       ),
     );
   }

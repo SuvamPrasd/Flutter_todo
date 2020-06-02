@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './models/todo.dart';
 import './screens/todoScreen.dart';
+import './models/gitCommands.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,7 +36,7 @@ class _TodoState extends State<Todo> {
         body: ListView.builder(
           itemBuilder: (ctx, index) {
             return ListTile(
-              title: Text(todo[index].title),
+              title: Text(gitCommand[index]['title']),
               trailing: Icon(Icons.verified_user),
               onTap: () {
                 // Navigator.push(
@@ -47,12 +48,12 @@ class _TodoState extends State<Todo> {
                     MaterialPageRoute(
                         builder: (ctx) => TodoScreen(),
                         settings: RouteSettings(
-                          arguments: todo[index],
+                          arguments: gitCommand[index],
                         )));
               },
             );
           },
-          itemCount: todo.length,
+          itemCount: gitCommand.length,
         ));
   }
 }
