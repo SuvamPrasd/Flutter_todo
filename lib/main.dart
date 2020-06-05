@@ -30,13 +30,14 @@ class _TodoState extends State<Todo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black45,
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
             key: GlobalKey(
               debugLabel: 'appBar12',
             ),
-            backgroundColor: Colors.blueAccent,
+            backgroundColor: Colors.black,
             actions: <Widget>[
               IconButton(
                 icon: Icon(Icons.info),
@@ -64,9 +65,7 @@ class _TodoState extends State<Todo> {
             expandedHeight: 250.0,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.network(
-                // 'https://cdn.pixabay.com/photo/2014/07/15/23/36/github-394322_960_720.png',
                 'https://cdn.pixabay.com/photo/2017/07/10/23/45/cubes-2492010_960_720.jpg',
-                // 'https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png',
                 fit: BoxFit.cover,
                 alignment: Alignment.bottomCenter,
               ),
@@ -86,6 +85,7 @@ class _TodoState extends State<Todo> {
                       style: TextStyle(
                         fontSize: 25,
                         letterSpacing: 1,
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(
@@ -97,16 +97,19 @@ class _TodoState extends State<Todo> {
                         height: 1.4,
                         wordSpacing: 2,
                         letterSpacing: 0.3,
+                        color: Colors.white,
                       ),
                     ),
                     const Divider(
                       thickness: 2,
+                      color: Colors.blue,
                     ),
                     Text(
                       'What is Github?',
                       style: TextStyle(
                         fontSize: 25,
                         letterSpacing: 1,
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(
@@ -118,6 +121,7 @@ class _TodoState extends State<Todo> {
                         height: 1.4,
                         wordSpacing: 2,
                         letterSpacing: 0.3,
+                        color: Colors.white,
                       ),
                     )
                   ],
@@ -136,15 +140,31 @@ class _TodoState extends State<Todo> {
                   },
                   child: GridTile(
                     child: Card(
-                      child: Text(gitCommand[index]['title']),
-                    ),
+                        color: Colors.yellow[700],
+                        margin: EdgeInsets.all(10.0),
+                        elevation: 0,
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Center(
+                            child: Text(
+                              gitCommand[index]['title'],
+                              style: TextStyle(
+                                height: 1.4,
+                                wordSpacing: 2,
+                                fontSize: 20,
+                                letterSpacing: 0.3,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        )),
                   ),
                 );
               }, childCount: gitCommand.length),
               gridDelegate: new SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200.0,
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
+                mainAxisSpacing: 2.0,
+                crossAxisSpacing: 2.0,
                 childAspectRatio: 1.0,
               ))
         ],
