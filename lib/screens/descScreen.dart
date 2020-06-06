@@ -9,35 +9,41 @@ class DescScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white60,
       elevation: 5,
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              color: Colors.black54,
-              child: Text(
-                command,
-                style: TextStyle(
-                  fontFamily: 'SourceCodePro',
-                  fontSize: 20,
-                  wordSpacing: 10,
-                ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15,
+              vertical: 10,
+            ),
+            color: Colors.black87,
+            child: Text(
+              command,
+              style: const TextStyle(
+                fontFamily: 'SourceCodePro',
+                fontSize: 20,
+                wordSpacing: 10,
+                color: Colors.white,
               ),
             ),
-            const Divider(
-              height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15,
+              vertical: 10,
             ),
-            Text(
+            child: Text(
               desc,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: 'Poppins',
                 color: Colors.black38,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

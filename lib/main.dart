@@ -11,6 +11,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Git Commands',
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+      ),
       home: Todo(),
     );
   }
@@ -39,23 +42,23 @@ class _TodoState extends State<Todo> {
             backgroundColor: Colors.black,
             actions: <Widget>[
               IconButton(
-                icon: Icon(Icons.info),
+                icon: const Icon(Icons.info),
                 onPressed: () {
                   return showAboutDialog(
                       context: context,
-                      applicationIcon: Icon(Icons.wb_sunny),
+                      applicationIcon: const Icon(Icons.wb_sunny),
                       applicationLegalese: 'No One can copy the source code',
                       applicationVersion: '1.0v',
                       children: [
-                        CircleAvatar(
-                          child: Icon(Icons.whatshot),
+                        const CircleAvatar(
+                          child: const Icon(Icons.whatshot),
                         )
                       ]);
                 },
                 iconSize: 40,
               )
             ],
-            title: Text(
+            title: const Text(
               'Git Commands',
               style: TextStyle(
                 fontSize: 20,
@@ -72,14 +75,14 @@ class _TodoState extends State<Todo> {
           ),
           SliverToBoxAdapter(
             child: Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   bottom: 30,
                 ),
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'What is Git?',
                       style: TextStyle(
                         fontSize: 25,
@@ -87,23 +90,22 @@ class _TodoState extends State<Todo> {
                         // color: Colors.white,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                       'Git is a version control system that keeps track of your current work, storing the modifications in a central repository, and even retireve your previous work using Git tool.',
-                      style: TextStyle(
+                      style: const TextStyle(
                         height: 1.4,
                         wordSpacing: 2,
                         letterSpacing: 0.3,
                         // color: Colors.white,
                       ),
                     ),
-                    const Divider(
-                      thickness: 2,
-                      // color: Colors.blue,
+                    const SizedBox(
+                      height: 30,
                     ),
-                    Text(
+                    const Text(
                       'What is Github?',
                       style: TextStyle(
                         fontSize: 25,
@@ -111,12 +113,12 @@ class _TodoState extends State<Todo> {
                         // color: Colors.white,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                       'Github is a hub or platform where you can store your programs source code, collaborate with other programmers, and through git tool you can keeps track of your current work.',
-                      style: TextStyle(
+                      style: const TextStyle(
                         height: 1.4,
                         wordSpacing: 2,
                         letterSpacing: 0.3,
@@ -140,8 +142,8 @@ class _TodoState extends State<Todo> {
                   child: GridTile(
                     child: Card(
                         color: Colors.black87,
-                        margin: EdgeInsets.all(10.0),
-                        shape: BeveledRectangleBorder(
+                        margin: const EdgeInsets.all(10.0),
+                        shape: const BeveledRectangleBorder(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(35),
                           ),
@@ -152,7 +154,7 @@ class _TodoState extends State<Todo> {
                           child: Center(
                             child: Text(
                               gitCommand[index]['title'],
-                              style: TextStyle(
+                              style: const TextStyle(
                                 height: 1.4,
                                 color: Colors.white,
                                 wordSpacing: 2,
