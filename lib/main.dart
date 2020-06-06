@@ -30,7 +30,6 @@ class _TodoState extends State<Todo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black45,
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
@@ -85,7 +84,7 @@ class _TodoState extends State<Todo> {
                       style: TextStyle(
                         fontSize: 25,
                         letterSpacing: 1,
-                        color: Colors.white,
+                        // color: Colors.white,
                       ),
                     ),
                     SizedBox(
@@ -97,19 +96,19 @@ class _TodoState extends State<Todo> {
                         height: 1.4,
                         wordSpacing: 2,
                         letterSpacing: 0.3,
-                        color: Colors.white,
+                        // color: Colors.white,
                       ),
                     ),
                     const Divider(
                       thickness: 2,
-                      color: Colors.blue,
+                      // color: Colors.blue,
                     ),
                     Text(
                       'What is Github?',
                       style: TextStyle(
                         fontSize: 25,
                         letterSpacing: 1,
-                        color: Colors.white,
+                        // color: Colors.white,
                       ),
                     ),
                     SizedBox(
@@ -121,7 +120,7 @@ class _TodoState extends State<Todo> {
                         height: 1.4,
                         wordSpacing: 2,
                         letterSpacing: 0.3,
-                        color: Colors.white,
+                        // color: Colors.white,
                       ),
                     )
                   ],
@@ -140,8 +139,13 @@ class _TodoState extends State<Todo> {
                   },
                   child: GridTile(
                     child: Card(
-                        color: Colors.yellow[700],
+                        color: Colors.black87,
                         margin: EdgeInsets.all(10.0),
+                        shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(35),
+                          ),
+                        ),
                         elevation: 0,
                         child: Container(
                           padding: EdgeInsets.all(10),
@@ -150,6 +154,7 @@ class _TodoState extends State<Todo> {
                               gitCommand[index]['title'],
                               style: TextStyle(
                                 height: 1.4,
+                                color: Colors.white,
                                 wordSpacing: 2,
                                 fontSize: 20,
                                 letterSpacing: 0.3,
