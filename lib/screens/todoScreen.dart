@@ -12,10 +12,17 @@ class TodoScreen extends StatelessWidget {
     final Map<String, String> todo = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text(todo['title']),
       ),
       body: SingleChildScrollView(
         child: Container(
+          padding: EdgeInsets.only(
+            top: 10,
+            right: 10,
+            left: 10,
+            bottom: 5,
+          ),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
