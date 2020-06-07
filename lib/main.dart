@@ -58,16 +58,10 @@ class _TodoState extends State<Todo> {
                 iconSize: 40,
               )
             ],
-            title: const Text(
-              'Git Commands',
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
             expandedHeight: 250.0,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.network(
-                'https://cdn.pixabay.com/photo/2017/07/10/23/45/cubes-2492010_960_720.jpg',
+              background: Image.asset(
+                'images/photo.jpg',
                 fit: BoxFit.cover,
                 alignment: Alignment.bottomCenter,
               ),
