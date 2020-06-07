@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 import './screens/todoScreen.dart';
 import './models/gitCommands.dart';
@@ -76,12 +77,18 @@ class _TodoState extends State<Todo> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    const Text(
-                      'What is Git?',
-                      style: TextStyle(
-                        fontSize: 25,
-                        letterSpacing: 1,
-                        // color: Colors.white,
+                    ListTile(
+                      leading: const Text(
+                        'What is Git?',
+                        style: TextStyle(
+                          fontSize: 25,
+                          letterSpacing: 1,
+                          // color: Colors.white,
+                        ),
+                      ),
+                      trailing: Icon(
+                        AntDesign.gitlab,
+                        size: 30,
                       ),
                     ),
                     const SizedBox(
@@ -99,12 +106,18 @@ class _TodoState extends State<Todo> {
                     const SizedBox(
                       height: 30,
                     ),
-                    const Text(
-                      'What is Github?',
-                      style: TextStyle(
-                        fontSize: 25,
-                        letterSpacing: 1,
-                        // color: Colors.white,
+                    ListTile(
+                      leading: const Text(
+                        'What is Github?',
+                        style: TextStyle(
+                          fontSize: 25,
+                          letterSpacing: 1,
+                          // color: Colors.white,
+                        ),
+                      ),
+                      trailing: Icon(
+                        AntDesign.gitlab,
+                        size: 30,
                       ),
                     ),
                     const SizedBox(
