@@ -67,6 +67,7 @@ class _TodoState extends State<Todo> {
                 alignment: Alignment.bottomCenter,
               ),
             ),
+            floating: true,
           ),
           SliverToBoxAdapter(
             child: Container(
